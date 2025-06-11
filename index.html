@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IIFE Counter Example</title>
+</head>
+<body>
+  <button id="clickBtn">Click me</button>
+  <p id="result">You've clicked 0 times.</p>
+
+  <script>
+    (function () {
+      // Private variable, not accessible outside this IIFE
+      let count = 0;
+
+      // Get elements
+      const button = document.getElementById('clickBtn');
+      const result = document.getElementById('result');
+
+      // Attach event listener
+      button.addEventListener('click', function () {
+        count++;
+        result.textContent = `You've clicked ${count} times.`;
+      });
+    })();
+  </script>
+</body>
+</html>
